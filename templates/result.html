@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <!-- Webpage Title -->
+        <title>크라우드 펀딩</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+
+        <!-- 구글폰트 -->
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $("#reviews-box").html("");
+                showReview();
+            });
+
+
+
+            function showReview() {
+                $.ajax({
+                    type: "GET",
+                    url: "/review",
+                    data: {},
+                    success: function (response) {
+                        let reviews = response["all_reviews"]
+                        let firstGroup = 0
+                        let secondGroup = 0
+                        let thirdGroup = 0
+                        let fourthGroup = 0
+                        let fifthGroup = 0
+                        let sixthGroup = 0
+                        let seventhGroup = 0
+                        let eighthGroup = 0
+                        for(let i=0; i < reviews.length; i++){
+                            firstGroup += Number(reviews[i]["firstGroup"])
+                            secondGroup += Number(reviews[i]["secondGroup"])
+                            thirdGroup += Number(reviews[i]["thirdGroup"])
+                            fourthGroup += Number(reviews[i]["fourthGroup"])
+                            fifthGroup += Number(reviews[i]["fifthGroup"])
+                            sixthGroup += Number(reviews[i]["sixthGroup"])
+                            seventhGroup += Number(reviews[i]["seventhGroup"])
+                            eighthGroup += Number(reviews[i]["eighthGroup"])
+
+                            let temp_html =
+                            `<tr>
+                                
+                                <td>${firstGroup.toLocaleString('ko-KR')} 원</td>
+                                <td>${secondGroup.toLocaleString('ko-KR')} 원</td>
+                                <td>${thirdGroup.toLocaleString('ko-KR')} 원</td>
+                                <td>${fourthGroup.toLocaleString('ko-KR')} 원</td>
+                                <td>${fifthGroup.toLocaleString('ko-KR')} 원</td>
+                                <td>${sixthGroup.toLocaleString('ko-KR')} 원</td>
+                                <td>${seventhGroup.toLocaleString('ko-KR')} 원</td>
+                                <td>${eighthGroup.toLocaleString('ko-KR')} 원</td>
+
+                              </tr>`
+
+                         $("#reviews-box").html(temp_html)
+                        }
+                    }
+                })
+            }
+        </script>
+
+        <style type="text/css">
+            * {
+                font-family: "Do Hyeon", sans-serif;
+            }
+
+            h1,
+            h5 {
+                display: inline;
+            }
+
+            .info {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .review {
+                text-align: center;
+            }
+
+            .reviews {
+                margin-top: 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="info">
+                <h1>UNTITLED</h1>
+                <p>TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST</p>
+            <div class="reviews">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">1조</th>
+                        <th scope="col">2조</th>
+                        <th scope="col">3조</th>
+                        <th scope="col">4조</th>
+                        <th scope="col">5조</th>
+                        <th scope="col">6조</th>
+                        <th scope="col">7조</th>
+                        <th scope="col">8조</th>
+
+                    </tr>
+                    </thead>
+                    <tbody id="reviews-box">
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+
+</html>

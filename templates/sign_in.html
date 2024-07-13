@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/sign_in.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <title>CrowdFunding</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="title">
+            <h1>
+                Sign In
+            </h1>
+        </div>
+        
+        <div id="sign_in">
+            <div id="sign_in_field">
+                <input onkeypress="number_input(event)" id="text_field" type="text" required>
+                <label id="field_label">Class Number</label>
+                <span id="field_bar"></span>
+            </div>
+
+            <div id="sign_in_button">
+                <button onclick="sign_in()" type="submit" id="login">
+                    <span id="btn_text">로그인</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src=" {{ url_for('static', filename='js/sign_in.js') }}"></script>
+</body>
+</html>
