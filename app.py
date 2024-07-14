@@ -47,9 +47,10 @@ def page():
 def page_user(User, Group):
     Group = Group + "Group"
     temp = list(db.description.find({"Group": Group}))
+    user1 = User
     User = list(db.bankAccount.find({"name": User}))
     return render_template('page.html', Title=temp[0]['Title'], Long_explain=temp[0]['Long_explain'],
-                           money=format(User[0]["money"],','))
+                           money=format(User[0]["money"],','),user=user1)
 
 
 @app.route('/sign_in')
@@ -60,10 +61,10 @@ def sign_in():
 @app.route('/<user1>')
 def logedin(user1):
     if (db.bankAccount.find_one({"name": user1})):
-        return render_template('index.html', user=f'{user1}')
+        return render_template('signed_index.html', user=f'{user1}')
     else:
         db.bankAccount.insert_one({"name": user1, "money": 100000})
-        return render_template('index.html', user=f'{user1}')
+        return render_template('signed_index.html', user=f'{user1}')
 
 
 @app.route('/result')

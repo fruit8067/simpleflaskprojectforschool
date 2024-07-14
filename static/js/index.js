@@ -14,8 +14,8 @@ $(document).ready(function () {
             url: "/bank2",
             data: {"user":user},
             success: function(response){
-                console.log(response['msg']); /* 자기 돈*/
-
+                console.log(response['msg']);
+                 /* 자기 돈*/
             }
         })
 
@@ -25,13 +25,21 @@ $(document).ready(function () {
         url: "/review",
         data: {},
         success: function(response){
-            var temp = response['all_reviews'];
-            console.log(temp[0]['Title']) /* all_reviews : 모든 조의 설명(재품 이름, 설명)
-            temp[0]['Title'] > 1조의 제목, temp[0]['Long_explain'] > 1조의 긴 설명, temp[1]['Title'] > 1조의 */
-            var temp2 = response['funded_money']
-            console.log(temp2[0]['FundedMoney'])/*1조의 펀딩 금액*/
+            var reviews = response['all_reviews'];
+            console.log(reviews[0]['Title']); /* all_reviews : 모든 조의 설명(재품 이름, 설명)
+            reviews[0]['Title'] > 1조의 제목, reviews[0]['Long_explain'] > 1조의 긴 설명, reviews[1]['Title'] > 1조의 */
+            var f_money = response['funded_money'];
+            console.log(f_money[0]['FundedMoney']);/*1조의 펀딩 금액*/
+            
+            for (var i = 0; i < 8; i++) {
+                document.getElementById("card-title"+String(i+1)).innerHTML = reviews[i]['Title'];
+                document.getElementById("card-summary"+String(i+1)).innerHTML = reviews[i]['Long_explain'];
+                document.getElementById("card-money"+String(i+1)).innerHTML = f_money[i]['FundedMoney'] + "\\";
+            }
         }
     })
+
+
 });
 
 function FIRST(){
