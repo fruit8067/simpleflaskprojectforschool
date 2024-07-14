@@ -46,9 +46,11 @@ body {
     background-color: #ebebeb;
 }
 
-/*Sign In button style*/
+/* User style*/
 #user {
-    font-size: 200%;
+    font-size: 150%;
+    text-decoration: none;
+    color: #555;
     
     position: inherit;
     left: 99%;
