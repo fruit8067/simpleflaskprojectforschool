@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family : 'NanumSquare', sans-serif;
 }
 
 body {
@@ -136,6 +137,8 @@ a {
 .card p {
     flex: 1;
     line-height: 1.4;
+
+    margin-top: 10px;
 }
 
 h1 {
@@ -153,12 +156,12 @@ h1 {
 
 /* account style */
 #account {
-    font-size: 200%;
+    font-size: 150%;
     text-decoration: none;
     color: #555;
 
     position: fixed;
     top: 95%;
-    left: 95%;
-    transform: translate(-100%, -100%);
+    left: 90%;
+    transform: translate(0, -100%);
 }

@@ -49,7 +49,7 @@ def page_user(User, Group):
     temp = list(db.description.find({"Group": Group}))
     user1 = User
     User = list(db.bankAccount.find({"name": User}))
-    return render_template('page.html', Title=temp[0]['Title'], Long_explain=temp[0]['Long_explain'], money=format(User[0]["money"],','),user=user1)
+    return render_template('page.html', Title=temp[0]['Title'], Long_explain=temp[0]['Long_explain'], money=format(User[0]["money"],','),user=user1, img=Group)
 
 
 @app.route('/sign_in')
@@ -80,7 +80,7 @@ def write_review():
     Input = request.form['input']
     Input = int(Input)
     student = request.form['student']
-    print(Group, student)
+
     if Input > int(Account):
         return jsonify({'msg': f'저장 실패! 잔여 금액을 초과하셨습니다. 잔여 금액 : {Account}'})
     else:
@@ -96,9 +96,9 @@ def write_review():
 @app.route('/review', methods=['GET'])
 def read_reviews():
     client_reviews = list(db.description.find({}, {'_id': False}))
-    print(client_reviews)
+
     Funded_money = list(db.crowdfunding.find({}, {'_id': False}))
-    print(Funded_money)
+
     return jsonify({'all_reviews': client_reviews, 'funded_money': Funded_money})
 
 

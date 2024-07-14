@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family : 'NanumSquare', sans-serif;
 }
 
 body {
@@ -164,6 +165,8 @@ a {
 .card p {
     flex: 1;
     line-height: 1.4;
+
+    margin-top: 10px;
 }
 
 h1 {

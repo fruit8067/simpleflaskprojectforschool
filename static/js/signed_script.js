@@ -1,19 +1,5 @@
 $(document).ready(function () {
     user = $("#user").text();
-    if(user == ''){
-
-    }else{
-        $.ajax({
-            type: "POST",
-            url: "/bank2",
-            data: {"user": user},
-            success: function(response){
-                console.log(response['msg']);
-                document.getElementById("money").innerHTML = response['msg'] + "\\";/* 자기 돈*/
-            }
-        })
-
-    }
     $.ajax({
         type: "GET",
         url: "/review",
@@ -28,7 +14,7 @@ $(document).ready(function () {
             for (var i = 0; i < 8; i++) {
                 document.getElementById("card-title"+String(i+1)).innerHTML = reviews[i]['Title'];
                 document.getElementById("card-summary"+String(i+1)).innerHTML = reviews[i]['Long_explain'];
-                document.getElementById("card-money"+String(i+1)).innerHTML = f_money[i]['FundedMoney'] + "\\";
+                document.getElementById("card-money"+String(i+1)).innerHTML = f_money[i]['FundedMoney'] + "&#8361;";
             }
         }
     })

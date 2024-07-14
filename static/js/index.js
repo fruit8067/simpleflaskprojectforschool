@@ -34,7 +34,7 @@ $(document).ready(function () {
             for (var i = 0; i < 8; i++) {
                 document.getElementById("card-title"+String(i+1)).innerHTML = reviews[i]['Title'];
                 document.getElementById("card-summary"+String(i+1)).innerHTML = reviews[i]['Long_explain'];
-                document.getElementById("card-money"+String(i+1)).innerHTML = f_money[i]['FundedMoney'] + "\\";
+                document.getElementById("card-money"+String(i+1)).innerHTML = f_money[i]['FundedMoney'] + "&#8361;";
             }
         }
     })
