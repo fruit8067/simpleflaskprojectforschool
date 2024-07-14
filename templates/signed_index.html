@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/signed_style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <title>CrowdFunding</title>
+</head>
+<body>
+    <p id="background"></p>
+
+    <span id="top_menu">
+        <span id="user">{{user}}</span>
+        <a id="main_title" href="index.html">
+            GHS Funding
+        </a>
+    </span>
+
+    <div class="container">
+        <div class="menu-1">
+            <a class="card" onclick="FIRST()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title1">Title</h1>
+                    <p id="card-summary1">summary</p>
+                    <span id="card-money1">money</span>
+                </article>
+            </a>
+        </div>
+        
+        <div class="menu-2" >
+            <a class="card" onclick="SECOND()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title2">Title</h1>
+                    <p id="card-summary2">summary</p>
+                    <span id="card-money2">money</span>
+                </article>
+            </a>
+        </div>
+
+        <div class="menu-3">
+            <a class="card" onclick="THIRD()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title3">Title</h1>
+                    <p id="card-summary3">summary</p>
+                    <span id="card-money3">money</span>
+                </article>
+            </a>
+        </div>
+
+        <div class="menu-4">
+            <a class="card" onclick="FOURTH()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title4">Title</h1>
+                    <p id="card-summary4">summary</p>
+                    <span id="card-money4">money</span>
+                </article>
+            </a>
+        </div>
+
+        <div class="menu-5">
+            <a class="card" onclick="FIFTH()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title5">Title</h1>
+                    <p id="card-summary5">summary</p>
+                    <span id="card-money5">money</span>
+                </article>
+            </a>
+        </div>
+
+        <div class="menu-6" >
+            <a class="card" onclick="SIXTH()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title6">Title</h1>
+                    <p id="card-summary6">summary</p>
+                    <span id="card-money6">money</span>
+                </article>
+            </a>
+        </div>
+
+        <div class="menu-7">
+            <a  class="card" onclick="SEVENTH()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title7">Title</h1>
+                    <p id="card-summary7">summary</p>
+                    <span id="card-money7">money</span>
+                </article>
+            </a>
+        </div>
+
+        <div class="menu-8">
+            <a class="card"  onclick="EIGHTH()">
+                <div class="image" style="background-image: url(https://www.purina.co.uk/sites/default/files/styles/ttt_image_original/public/2023-03/Hero%20Pedigree%20Cats.webp?itok=zKKx3jSn);"></div>
+                <article>
+                    <h1 id="card-title8">Title</h1>
+                    <p id="card-summary8">summary</p>
+                    <span id="card-money8">money</span>
+                </article>
+            </a>
+        </div>
+    </div>
+
+    <div id="account">
+        <span id = "money">money</span>
+    </div>
+
+    <script type="text/javascript" src=" {{ url_for('static', filename='js/signed_script.js') }}"></script>
+</body>
+</html>

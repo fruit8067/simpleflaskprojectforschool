@@ -49,8 +49,7 @@ def page_user(User, Group):
     temp = list(db.description.find({"Group": Group}))
     user1 = User
     User = list(db.bankAccount.find({"name": User}))
-    return render_template('page.html', Title=temp[0]['Title'], Long_explain=temp[0]['Long_explain'],
-                           money=format(User[0]["money"],','),user=user1)
+    return render_template('page.html', Title=temp[0]['Title'], Long_explain=temp[0]['Long_explain'], money=format(User[0]["money"],','),user=user1)
 
 
 @app.route('/sign_in')
@@ -123,4 +122,4 @@ def get_account():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=True)
