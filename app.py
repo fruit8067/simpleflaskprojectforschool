@@ -1,13 +1,11 @@
 from flask import Flask, render_template, jsonify, request
+from pymongo import MongoClient
+import re
 
 app = Flask(__name__)
 
-from pymongo import MongoClient
-
 client = MongoClient('localhost', 27017)
 db = client.dbjung
-
-import re
 
 """
 todo
@@ -51,7 +49,7 @@ def page_user(User, Group):
     temp = list(db.description.find({"Group": Group}))
     User = list(db.bankAccount.find({"name": User}))
     return render_template('page.html', Title=temp[0]['Title'], Long_explain=temp[0]['Long_explain'],
-                           money=User[0]["money"])
+                           money=format(User[0]["money"],','))
 
 
 @app.route('/sign_in')

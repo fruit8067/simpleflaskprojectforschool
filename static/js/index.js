@@ -26,7 +26,8 @@ $(document).ready(function () {
         data: {},
         success: function(response){
             var temp = response['all_reviews'];
-            console.log(temp[0]['Title']) /* all_reviews : 모든 조의 설명(재품 이름, 설명)*/
+            console.log(temp[0]['Title']) /* all_reviews : 모든 조의 설명(재품 이름, 설명)
+            temp[0]['Title'] > 1조의 제목, temp[0]['Long_explain'] > 1조의 긴 설명, temp[1]['Title'] > 1조의 */
             var temp2 = response['funded_money']
             console.log(temp2[0]['FundedMoney'])/*1조의 펀딩 금액*/
         }
